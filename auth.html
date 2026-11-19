@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Login or sign up — Chapter & Co.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Cairo:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.all.min.js"></script>
+    <script defer src="js/data.js"></script>
+    <script defer src="js/main.js"></script>
+    <script defer src="js/auth.js"></script>
+</head>
+
+<body>
+    <header id="site-header"></header>
+    <main class="page-wrap auth-page">
+        <div class="page-intro compact"><span class="eyebrow">Your own corner of the bookstore</span>
+            <h1>Welcome, reader.</h1>
+            <p>Sign in to see your books, or create an account to get started.</p>
+        </div>
+        <section class="auth-panel" aria-labelledby="auth-heading">
+            <h2 class="sr-only" id="auth-heading">Account access</h2>
+            <div class="auth-tabs" role="tablist" aria-label="Account access"><button class="tab-btn active"
+                    id="login-tab" type="button" role="tab" aria-selected="true"
+                    aria-controls="login-form">Login</button><button class="tab-btn" id="signup-tab" type="button"
+                    role="tab" aria-selected="false" aria-controls="signup-form">Sign Up</button></div>
+            <form id="login-form" class="auth-form" role="tabpanel" aria-labelledby="login-tab" novalidate>
+                <fieldset>
+                    <legend class="sr-only">Login details</legend><label class="form-field"><span>Email
+                            address</span><input name="email" type="email" autocomplete="email" required></label><label
+                        class="form-field"><span>Password</span><input name="password" type="password"
+                            autocomplete="current-password" required></label>
+                </fieldset><button class="button button-dark" type="submit">Login <i class="fa-solid fa-arrow-right"
+                        aria-hidden="true"></i></button>
+            </form>
+            <form id="signup-form" class="auth-form hidden" role="tabpanel" aria-labelledby="signup-tab" novalidate>
+                <fieldset>
+                    <legend class="sr-only">New account details</legend><label class="form-field"><span>Full
+                            name</span><input name="name" autocomplete="name" required></label><label
+                        class="form-field"><span>Email address</span><input name="email" type="email"
+                            autocomplete="email" required></label><label class="form-field"><span>Phone
+                            number</span><input name="phone" type="tel" autocomplete="tel" required></label>
+                    <fieldset class="account-type">
+                        <legend>Account type</legend><label><input type="radio" name="role" value="client" checked>
+                            Client</label><label><input type="radio" name="role" value="admin"> Admin</label>
+                    </fieldset><label class="form-field hidden" id="admin-code-field"><span>Admin verification
+                            password</span><input name="adminCode" type="password" autocomplete="off"></label><label
+                        class="form-field"><span>Password (at least 6 characters)</span><input name="password"
+                            type="password" autocomplete="new-password" required minlength="6"></label><label
+                        class="form-field"><span>Confirm password</span><input name="confirmPassword" type="password"
+                            autocomplete="new-password" required></label>
+                </fieldset><button class="button button-dark" type="submit">Create account <i
+                        class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+            </form>
+        </section>
+    </main>
+    <footer id="site-footer"></footer>
+</body>
+
+</html>

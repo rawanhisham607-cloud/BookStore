@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Browse books — Chapter & Co.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.all.min.js"></script>
+    <script defer src="js/data.js"></script>
+    <script defer src="js/main.js"></script>
+    <script defer src="js/catalog.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header id="site-header"></header>
+    <main class="page-wrap">
+        <div class="page-intro"><span class="eyebrow">The collection</span>
+            <h1>Find your next favorite.</h1>
+            <p>Take your time. There’s a story here for everyone.</p>
+        </div>
+        <div class="catalog-layout">
+            <aside class="filters">
+                <div class="filter-heading">
+                    <h2>Filters</h2><button class="text-link" id="clear-filters">Clear all</button>
+                </div><label>Category<select id="filter-category">
+                        <option value="">All categories</option>
+                    </select></label><label>Language<select id="filter-language">
+                        <option value="">All languages</option>
+                        <option value="ar">عربي</option>
+                        <option value="en">English</option>
+                    </select></label><label>Maximum price <span id="price-label">$60</span><input type="range"
+                        id="filter-price" min="5" max="60" value="60"></label><label class="check-label"><input
+                        type="checkbox" id="filter-stock"> In stock only</label><label>Sort by<select id="sort-books">
+                        <option value="featured">Featured</option>
+                        <option value="price-asc">Price: low to high</option>
+                        <option value="price-desc">Price: high to low</option>
+                        <option value="title">Title: A–Z</option>
+                        <option value="rating">Top rated</option>
+                    </select></label>
+            </aside>
+            <section class="catalog-results">
+                <div class="catalog-toolbar">
+                    <p id="result-count"></p><label class="sr-only" for="catalog-search">Search books</label><input
+                        id="catalog-search" type="search" placeholder="Search title or author…">
+                </div>
+                <div class="book-grid" id="catalog-grid"></div>
+                <p class="empty-state hidden" id="no-results">No books match those filters. Try adjusting your search.
+                </p>
+            </section>
+        </div>
+    </main>
+    <footer id="site-footer"></footer>
+</body>
+
+</html>
